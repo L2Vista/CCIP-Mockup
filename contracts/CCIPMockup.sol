@@ -1,49 +1,52 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
+import {Client} from "./libraries/Client.sol";
+import {Internal} from "./libraries/Internal.sol";
+
 // import "hardhat/console.sol";
 
 contract CCIPMockup {
-    event CCIPSendRequested(
-        bytes32 indexed sourceChainSelector,
-        uint256 sequenceNumber,
-        uint256 feeTokenAmount,
-        address sender,
-        uint256 nonce,
-        uint256 gasLimit,
-        uint256 strict,
-        address receiver,
-        bytes data,
-        uint256 tokenAmounts,
-        address feeToken,
-        uint256 messageId
-    );
+    Client.EVMTokenAmount[] tokenAmounts;
 
-    event Transmitted(bytes32 indexed configDigest, uint32 epoch);
+    event CCIPSendRequested(Internal.EVM2EVMMessage message);
+
+    event ExecutionStateChanged(
+        uint64 indexed sequenceNumber,
+        bytes32 indexed messageId,
+        Internal.MessageExecutionState state,
+        bytes returnData
+    );
 
     function sendMessage(
         uint32 _destinationDomain,
         bytes calldata _messageBody
     ) external {
-        bytes memory zeroBytes;
-        emit CCIPSendRequested(
-            combine(_destinationDomain, _messageBody),
-            0,
-            0,
-            address(0),
-            0,
-            0,
-            0,
-            address(0),
-            zeroBytes,
-            0,
-            address(0),
-            0
-        );
+        Internal.EVM2EVMMessage memory message = Internal.EVM2EVMMessage({
+            sourceChainSelector: 0,
+            sequenceNumber: 0,
+            feeTokenAmount: 0,
+            sender: address(0),
+            nonce: 0,
+            gasLimit: 0,
+            strict: true,
+            receiver: address(0),
+            data: new bytes(0),
+            tokenAmounts: tokenAmounts,
+            feeToken: address(0),
+            messageId: combine(_destinationDomain, _messageBody)
+        });
+        
+        emit CCIPSendRequested(message);
     }
 
-    function receiveMessage(bytes32 configDigest) external {
-        emit Transmitted(configDigest, 0);
+    function receiveMessage(bytes32 messageId) external {
+        emit ExecutionStateChanged(
+            0,
+            messageId,
+            Internal.MessageExecutionState.SUCCESS,
+            new bytes(0)
+        );
     }
 
     function combine(
