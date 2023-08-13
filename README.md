@@ -8,9 +8,6 @@ The `CCIPMockup` contract serves as a mock representation of cross-chain interac
 2. **receiveMessage(bytes32 messageId):**
 - To simulate the message receipt from another chain.
 - Emits an `ExecutionStateChanged` event to signify a successful message receipt.
-3. **combine(uint32 _uint32, bytes memory _bytes):**
-- Utility function to combine various data types and generate a unique ID.
-- Returns a keccak256 hash for the combined data.
 
 ## Dependencies
 - **Client.sol:** Contains definitions related to client-side functionalities.
