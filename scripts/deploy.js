@@ -40,20 +40,20 @@ main();
 // 1. base
 // chainId: 84531
 // deployer address: 0xa40aa030A3ba4f42FDCd2B7bC33d5B03770290ea
-// deployer's balance: 0.018704469002768547 ETHER
-// mockup address: 0x073EfC27ad791F735ca1EdF1F9cfe647B8D99aBf
+// deployer's balance: 0.013486354321429408 ETHER
+// mockup address: 0xBb7027d4Bd8B022F653541E8a38D6094611376A3
 // 2. mode
 // chainId: 919
 // deployer address: 0xa40aa030A3ba4f42FDCd2B7bC33d5B03770290ea
-// deployer's balance: 0.19876867428026332 ETHER
-// mockup address: 0xC25d83872376c8b0EdA5f4C7eD5D59c05C1C2887
+// deployer's balance: 0.19827967085447798 ETHER
+// mockup address: 0xb6c87a438b1FE7EE0D30048559F84b078FFc08E9
 // 3. optimism
 // chainId: 420
 // deployer address: 0xa40aa030A3ba4f42FDCd2B7bC33d5B03770290ea
-// deployer's balance: 0.038756731779200145 ETHER
-// mockup address: 0xdB57E2c22989116Cec1Ad7D59D2edE8123124A35
+// deployer's balance: 0.03701527366508496 ETHER
+// mockup address: 0x2857E9799E4B7d3ad9ecC3e00c4599fdCa9756Ad
 // 4. zora
 // chainId: 999
 // deployer address: 0xa40aa030A3ba4f42FDCd2B7bC33d5B03770290ea
-// deployer's balance: 0.018781881923745677 ETHER
-// mockup address: 0xd7a26F297590BF33440f96B93aBd6568E1ce5d58
+// deployer's balance: 0.017483613222884394 ETHER
+// mockup address: 0x2857E9799E4B7d3ad9ecC3e00c4599fdCa9756Ad

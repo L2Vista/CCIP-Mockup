@@ -1,22 +1,22 @@
 module.exports = {
     mode: {
         url: "https://sepolia.mode.network",
-        contractAddr: "0xC25d83872376c8b0EdA5f4C7eD5D59c05C1C2887",
+        contractAddr: "0xb6c87a438b1FE7EE0D30048559F84b078FFc08E9",
         chainId: 919,
     },
     optimism: {
         url: "https://optimism-goerli.publicnode.com",
-        contractAddr: "0xdB57E2c22989116Cec1Ad7D59D2edE8123124A35",
+        contractAddr: "0x2857E9799E4B7d3ad9ecC3e00c4599fdCa9756Ad",
         chainId: 420,
     },
     zora: {
         url: "https://testnet.rpc.zora.co",
-        contractAddr: "0xd7a26F297590BF33440f96B93aBd6568E1ce5d58",
+        contractAddr: "0x2857E9799E4B7d3ad9ecC3e00c4599fdCa9756Ad",
         chainId: 999,
     },
     base: {
         url: "https://1rpc.io/base-goerli",
-        contractAddr: "0x073EfC27ad791F735ca1EdF1F9cfe647B8D99aBf",
+        contractAddr: "0xBb7027d4Bd8B022F653541E8a38D6094611376A3",
         chainId: 84531,
     },
 }
