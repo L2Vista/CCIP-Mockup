@@ -5,6 +5,10 @@ require("dotenv").config();
 
 const PRIVATE_KEY = process.env.PK;
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function send(url, contractAddr, toChain, message) {
     const provider = new ethers.JsonRpcProvider(url);
     const deployer = new ethers.Wallet(PRIVATE_KEY, provider);
@@ -41,6 +45,9 @@ async function sendReceive(fromChain, toChain) {
         chainInfo[toChain].chainId,
         message
     );
+
+    await sleep(60000);
+
     await receive(
         chainInfo[toChain].url,
         chainInfo[toChain].contractAddr,
@@ -53,10 +60,10 @@ async function main() {
     // base, mode, optimism, zora
     const chainSet = [
         { fromChain: "base", toChain: "mode", },
-        { fromChain: "mode", toChain: "base", },
         { fromChain: "optimism", toChain: "zora", },
-        { fromChain: "zora", toChain: "optimism", },
         { fromChain: "zora", toChain: "mode", },
+        { fromChain: "mode", toChain: "base", },
+        { fromChain: "zora", toChain: "optimism", },
         { fromChain: "mode", toChain: "zora", },
     ];
 
